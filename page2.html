@@ -4,42 +4,112 @@
     <title>Vignesh BK Webpage</title>
     <meta charset="utf-8">
     <style>
-      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
-      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+     
       @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
 
-      body { font-family: 'Droid Serif'; }
+      body { font-family: 'Frutiger'; color:#434448; }
       h1, h2, h3 {
-        font-family: 'Yanone Kaffeesatz';
+        font-family: 'Frutiger';
         font-weight: normal;
+        color: #E87722;
+        
       }
-      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      .remark-slide-vig {
+          /*background-image: url(b14.png);
+          background-repeat: repeat;*/
+        background-image: radial-gradient(rgb(251, 251, 251), rgb(220, 220, 220));
+        background-origin: padding-box;
+        background-position: 0% 0%;
+        background-repeat: repeat;
+        background-size: auto auto;
+        border-bottom-color: rgb(51, 51, 51);
+        padding: 0em 2em 0em 2em;
+      }
+       .remark-slide-container{background: white}
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; margin: 0em 3em 0em 3em; }
+      .header{
+        text-align: left;
+       width: 100%;
+       font-family: 'Frutiger'; 
+       color:#434448;
+       font-size: 3em;      
+       display: block;
+       border-bottom: 1px solid #C25608;
+     }
+  ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+ul li {
+  padding-left: 1em; 
+  text-indent: -.7em;
+}
+  ul li:before {
+    content: "."; font-size: 2em; 
+    color: #E87722; /* or whatever color you prefer */
+    margin-right: 4px;
+}
     </style>
   </head>
   <body>
     <textarea id="source">
 
-class: center, middle
+class:  left,remark-slide-vig
+.header[Important header]
+ ## Agenda
 
-# Scala Notes
+  * Vertx Metrics
+  * WebSockets in Vertx
+  * Unit Testing Support 
 
+ 
+
+Code:
+```
+private String a;
+def myFunc():Unit={
+  print("do something")
+}
+```
 ---
+class:  left,remark-slide-vig
+#Introduction to Scala
+Hawkular Docker :
 
-# Agenda
+docker pull hawkular/hawkular-services
 
-1. Introduction to Scala
-2. Basic Data Types
-3. Arrays, Maps and Tuples
+docker run --name hawkular-cassandra -e CASSANDRA_START_RPC=true -d cassandra:3.0.9
 
+docker run --link=hawkular-cassandra -e CASSANDRA_NODES=hawkular-cassandra -e HAWKULAR_USE_SSL=true -P hawkular/hawkular-services
+
+
+Ref : https://github.com/hawkular/hawkular-services/blob/master/docker-dist/src/main/docker/Dockerfile
+
+Auth :jdoe/password
 ---
+class: center,left
+#Items
 
-# Introduction to Scala
+1. **New File**
+2. **Find in File**
+3. **Find Replace**
+4. **Find Implementing Classes**
+
 
     </textarea>
-    <script src="remark.js">
-    </script>
+    <!--<script src="remark.js"/>-->
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/remark/0.14.0/remark.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/go.min.js"></script>
+
     <script>
-      var slideshow = remark.create();
+      var slideshow = remark.create({
+        highlightLanguage:'scala',
+        highlightStyle:'obsidian',
+        highlightLines:true
+      });
     </script>
   </body>
 </html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vignesh BK Webpage</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-slide-vig {
+          /*background-image: url(b14.png);
+          background-repeat: repeat;*/
+        background-image: radial-gradient(rgb(251, 251, 251), rgb(220, 220, 220));
+        background-origin: padding-box;
+        background-position: 0% 0%;
+        background-repeat: repeat;
+        background-size: auto auto;
+        border-bottom-color: rgb(51, 51, 51);
+      }
+       .remark-slide-container{background: white}
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+    </style>
+  </head>
+  <body>
+
+    <script src="remark.js">
+    </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/go.min.js"></script>
+
+    <script>
+      var slideshow = remark.create({
+        sourceUrl: 'idea-shortcuts.md',
+        highlightLanguage:'scala',
+        highlightStyle:'obsidian',
+        highlightLines:true
+      });
+    </script>
+  </body>
+</html>
