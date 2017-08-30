@@ -23,8 +23,17 @@
         background-size: auto auto;
         border-bottom-color: rgb(51, 51, 51);
       }
-       .remark-slide-container{background: white}
+      .remark-slide-container{background: white}
       .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      .header{
+        text-align: left;
+       width: 100%;
+       font-family: 'Frutiger'; 
+       color:#434448;
+       font-size: 2em;      
+       display: block;
+       border-bottom: 1px solid #C25608;
+     }
     </style>
   </head>
   <body>
@@ -34,8 +43,12 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/go.min.js"></script>
 
     <script>
+
+      console.log(window.location.search.substring(10))
+
+
       var slideshow = remark.create({
-        sourceUrl: 'idea-shortcuts.md',
+        sourceUrl: window.location.search.substring(10),
         highlightLanguage:'scala',
         highlightStyle:'obsidian',
         highlightLines:true
